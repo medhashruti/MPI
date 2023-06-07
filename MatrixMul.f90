@@ -83,22 +83,28 @@
      end do
      
      ! Gather local results to root process
-    call MPI_Gather(local_C, local_n * n, MPI_REAL, C, local_n * n, MPI_REAL, 0, MPI_COMM_WORLD, ierr)
+    call MPI_Gather(local_C, local_n * n, MPI_REAL, c, local_n * n, MPI_REAL, 0, MPI_COMM_WORLD, ierr)
     
     ! Print the final matrix multiplication result from the root process
     if (rank == 0) then
         write(*, '(a)') "Matrix C (Result):"
         do i = 1, n
             do j = 1, n
-                write(*, '(f5.1)', advance="no") C(i, j)
+                write(*, '(f5.1)', advance="no") c(i, j)
             end do
             write(*,*)
         end do
     end if
     
+    !write(*,'(F6.2)') c(i, j)
+    write(*, '(a)') "Matrix C:"
+    do i = 1, n
+        write(*, '(3f8.4)') (c(i,j),j = 1, n)
+    end do
+    
     ! Finalize MPI
     call MPI_Finalize(ierr)
     
-    
+    read(*,*)
     end program MatrixMul
 
