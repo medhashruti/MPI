@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33627.172
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{6989167D-11E4-40FE-8C1A-2192A86A7E90}") = "MatMul", "MatMul\MatMul.vfproj", "{FE8AC2A4-7523-4D8E-8B6D-FACB4AB5B2FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE8AC2A4-7523-4D8E-8B6D-FACB4AB5B2FB}.Debug|x64.ActiveCfg = Debug|x64
+		{FE8AC2A4-7523-4D8E-8B6D-FACB4AB5B2FB}.Debug|x64.Build.0 = Debug|x64
+		{FE8AC2A4-7523-4D8E-8B6D-FACB4AB5B2FB}.Debug|x86.ActiveCfg = Debug|Win32
+		{FE8AC2A4-7523-4D8E-8B6D-FACB4AB5B2FB}.Debug|x86.Build.0 = Debug|Win32
+		{FE8AC2A4-7523-4D8E-8B6D-FACB4AB5B2FB}.Release|x64.ActiveCfg = Release|x64
+		{FE8AC2A4-7523-4D8E-8B6D-FACB4AB5B2FB}.Release|x64.Build.0 = Release|x64
+		{FE8AC2A4-7523-4D8E-8B6D-FACB4AB5B2FB}.Release|x86.ActiveCfg = Release|Win32
+		{FE8AC2A4-7523-4D8E-8B6D-FACB4AB5B2FB}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9B6C0E34-F2E5-4DE4-A8B2-F7FFEED22BEC}
+	EndGlobalSection
+EndGlobal

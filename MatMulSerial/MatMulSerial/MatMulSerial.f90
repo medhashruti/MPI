@@ -18,9 +18,12 @@
     implicit none
 
     ! Variables
-    integer, parameter :: n = 3
+    integer, parameter :: n = 50
     integer :: i, j, k
     real :: a(n,n), b(n,n), c(n,n)
+    integer :: start_time, end_time, elapsed_time
+    call SYSTEM_CLOCK(start_time)
+    !start_time = cpu_time()
     
     ! Body of MatMulSerial
     call random_seed()
@@ -32,15 +35,15 @@
         end do
     end do
     
-     write(*, '(a)') "Matrix A:"
-    do i = 1, n
-        write(*, '(3f8.4)') (a(i,j),j = 1, n)
-    end do
+    ! write(*, '(a)') "Matrix A:"
+   ! do i = 1, n
+    !    write(*, '(3f8.4)') (a(i,j),j = 1, n)
+    !end do
    
-    write(*, '(a)') "Matrix B:"
-    do i = 1, n
-        write(*, '(3f8.4)') (b(i,j),j = 1, n)
-    end do
+   ! write(*, '(a)') "Matrix B:"
+    !do i = 1, n
+    !    write(*, '(3f8.4)') (b(i,j),j = 1, n)
+    !end do
     
     do i = 1, n
         do j = 1, n
@@ -51,10 +54,15 @@
         end do
     end do
     
-    write(*, '(a)') "Result Matrix C:"
-    do i = 1, n
-        write(*, '(3f8.4)') (c(i,j),j = 1, n)
-    end do
+    !write(*, '(a)') "Result Matrix C:"
+    !do i = 1, n
+    !    write(*, '(3f8.4)') (c(i,j),j = 1, n)
+    !end do
+    
+    call SYSTEM_CLOCK(end_time)
+    elapsed_time = end_time - start_time
+  
+    write(*, '(a, i8, " seconds")') "Run time:", elapsed_time
     Read(*,*)
     
     end program MatMulSerial
