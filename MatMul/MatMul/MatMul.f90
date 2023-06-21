@@ -18,7 +18,7 @@
     implicit none
 
     ! Variables
-    integer, parameter :: n = 50
+    integer, parameter :: n = 5
     integer :: i,j,k
     real :: a(n,n), b(n,n), c(n,n), local_A(n,n), local_C(n,n)
     
@@ -43,10 +43,45 @@
     
     do i = 1,n
         do j = 1,n
-            call RANDOM_NUMBER(a(i,j))
-            call RANDOM_NUMBER(b(i,j))
+            !call RANDOM_NUMBER(a(i,j))
+            a(i,j) = i+j
+            !call RANDOM_NUMBER(b(i,j))
+            b(i,j) = abs(i-j)
         end do
     end do
+    
+    do i = 1,n
+        do j = 1,n
+            c(i,j) = 0.0
+            do k = 1,n
+                c(i,j) = c(i,j) + a(i,k) * b(k,j)
+            end do
+        end do
+    end do
+    
+    write(*, '(a)') "Matrix C (Exact Result):"
+    do i = 1, n
+        do j = 1, n
+            write(*, '(f5.2)', advance="no") c(i, j)
+        end do
+        write(*,*)
+    end do
+    
+    !exact value of C:
+    !if ( rank == 0 ) then
+
+    !c(1:n,1:n) = matmul( a(1:n,1:n), b(1:n,1:n) )
+
+    !write ( *, '(a)' ) ' '
+    !write ( *, '(a)' ) 'MATMAT - Master process:'
+    !write ( *, '(a)' ) '  Initial 5 x 5 block of exact product matrix C:'
+    !write ( *, '(a)' ) ' '
+
+    !do i = 1, n
+     ! write ( *, '(50g14.6)' ) c(i,1:n)
+    !end do
+    !end if
+    
     
     !write(*, '(a)') "Matrix A:"
     !do i = 1, n
@@ -95,7 +130,7 @@
         write(*, '(a)') "Matrix C (Result):"
         do i = 1, n
             do j = 1, n
-                write(*, '(f5.1)', advance="no") c(i, j)
+                write(*, '(f5.2)', advance="no") c(i, j)
             end do
             write(*,*)
         end do
