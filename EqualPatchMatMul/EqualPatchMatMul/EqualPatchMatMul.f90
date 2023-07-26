@@ -22,18 +22,18 @@
     integer :: i,j,k
     integer :: proc = 1
     integer :: p, q
-    real :: a(n,n),b(n,n),c(n,n)
+    real :: a(n,n),b(n,n),c(n,n), rank, size
     real, allocatable :: a_sub(:,:), b_sub(:,:), c_sub(:,:)
     
      
     !initialize mpi
-    integer :: rank, size, ierr !,p ,q
+    integer :: ierr !,p ,q
     call MPI_Init(ierr)
     call MPI_Comm_size(MPI_COMM_WORLD, size, ierr)
     call MPI_Comm_rank(MPI_COMM_WORLD, rank, ierr)
     
     !grid dimension
-    p = int(sqrt(real(size)))
+    p = sqrt(size)
     q = size/p
     
     
