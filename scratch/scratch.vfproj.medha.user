@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VisualStudioUserFile ProjectCreator="Intel Fortran" Keyword="Console Application" Version="11.0" ProjectIdGuid="{7BF4A264-C4D0-4386-81D0-BC5F5EE33A71}">
+	<Configurations>
+		<Configuration Name="Debug|Win32">
+		</Configuration>
+		<Configuration Name="Debug|x64" Command="$(I_MPI_ONEAPI_ROOT)\bin\mpiexec.exe" CommandArguments="-np 5 &quot;$(TargetPath)&quot;">
+		</Configuration>
+		<Configuration Name="Release|Win32">
+		</Configuration>
+		<Configuration Name="Release|x64">
+		</Configuration>
+	</Configurations></VisualStudioUserFile>
