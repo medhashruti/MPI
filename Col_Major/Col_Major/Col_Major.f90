@@ -20,7 +20,7 @@
     ! Variables
 
     integer :: i,j,k,l
-    integer, parameter :: n=1400
+    integer, parameter :: n=140
     real :: a(n,n), b(n,n), c(n,n), c_act(n,n), b_col(n), c_col(1:n)
     real :: val
     
@@ -54,7 +54,7 @@
     call MPI_Comm_rank(MPI_COMM_WORLD, rank, ierr)
     call MPI_Comm_size(MPI_COMM_WORLD, num_procs, ierr)
     
-    write(*,*) "number of processes: ", num_procs
+    !write(*,*) "number of processes: ", num_procs
     
     !send copy of entire A matrix to all other processes:
     
